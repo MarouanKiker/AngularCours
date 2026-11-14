@@ -1,0 +1,26 @@
+<h1>{{ title }}</h1>
+<button (click)="changeTitre( nouveauTitreInput.value)">Changer le titre</button>
+<button (click)="supprimerTitre()" [disabled]="title === ''">Supprimer le titre</button>
+<input #nouveauTitreInput type="text" placeholder="Entrez un nouveau titre">
+
+<h2>Mes Tâches</h2>
+
+<ul>
+  @for (tache of taches; track $index) {
+ 
+  <li>{{ tache }}</li>
+  } @empty {
+ 
+  <p>Aucune tâche pour le moment !</p>
+  }
+</ul>
+
+
+<button (click)="viderTaches()" [disabled]="taches.length === 0">
+  Vider la liste
+</button>
+
+
+<button (click)="reinitialiserTaches()" [disabled]="taches.length > 0">
+  Recharger les tâches
+</button>

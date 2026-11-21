@@ -1,0 +1,13 @@
+<h1>Démonstration des Signals</h1>
+
+<h2>Compteur (Signal) : {{ compteur() }}</h2>
+<h3>Double (Computed) : {{ double() }}</h3>
+
+<p>
+
+  <button (click)="decrementer()">-1 (update)</button>
+  <button (click)="incrementer()">+1 (update)</button>
+
+  <button (click)="mettreACent()">Mettre à 100 (set)</button>
+  <button (click)="remettreAZero()" [disabled]="compteur() === 0">Remettre a 0</button>
+</p>
